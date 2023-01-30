@@ -1,0 +1,382 @@
+@use "scss/variable" as *;
+@use "scss/navbar" as *;
+@use "scss/home" as *;
+@use "scss/about" as *;
+@use "scss/speakers" as *;
+@use "scss/schedule" as *;
+@use "scss/pricing" as *;
+@use "scss/venue" as *;
+@use "scss/contact" as *;
+@use "scss/footer" as *;
+
+
+
+body {
+  background: $white-color;
+  font-family: $body-font-family; 
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $dark-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+  line-height: normal;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  color: $p-color;
+  font-size: $p-font-size;
+  font-weight: $font-weight-normal;
+}
+@mixin list-reset{
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+@mixin centering{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li {
+  @include list-reset;
+  @include centering;
+  color: $white-color;
+  font-size: $p-font-size;
+  font-weight: $font-weight-normal;
+  float: left;
+}
+
+a, 
+button {
+  touch-action: manipulation;
+  transition: all 0.3s;
+}
+
+a {
+  color: $white-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $primary-color;
+}
+
+::selection {
+  background: $primary-color;
+  color: $white-color;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  color: $white-color;
+}
+
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.custom-border-radius {
+  border-radius: 20px;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+/*---------------------------------------
+            CUSTOM ICON               
+-----------------------------------------*/
+.custom-icon {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  border: 2px solid $white-color;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  position: relative;
+}
+
+.custom-icon::before,
+.custom-icon::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.custom-icon::before {
+  border: 2px solid transparent;
+}
+
+.custom-icon::after {
+  border: 0 solid transparent;
+}
+
+.custom-icon:hover {
+  border-color: transparent;
+}
+
+.custom-icon:hover::before {
+  border-top-color: $primary-color;
+  border-right-color: $primary-color;
+  border-bottom-color: $primary-color;
+  transition: border-top-color .15s linear,border-right-color .15s linear .1s,border-bottom-color .15s linear .2s;
+}
+
+.custom-icon:hover::after {
+  border-top: 2px solid $primary-color;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  transform: rotate(270deg);
+  transition: transform .4s linear 0s,border-left-width 0s linear .35s;
+}
+
+/*---------------------------------------
+  CUSTOM BUTTON               
+-----------------------------------------*/
+.custom-btn,
+.navbar-expand-lg .navbar-nav .nav-link.custom-btn,
+.navbar-nav .nav-link.custom-btn {
+  background: $navbar-bg-color;
+  border-radius: 100px;
+  color: $white-color;
+  font-size: $copyright-text-font-size;
+  font-weight: $font-weight-bold;
+  padding: 10px 20px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.custom-btn,
+.navbar-nav .nav-link.custom-btn {
+  background: $secondary-color;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.custom-btn,
+.navbar-nav .nav-link.custom-btn {
+  margin-left: 20px;
+}
+
+.custom-border-btn {
+  background: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+}
+
+.custom-btn:hover,
+.navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+.navbar-nav .nav-link.custom-btn:hover {
+  background: $primary-color;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  color: $white-color;
+}
+
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-icon-link {
+  background: $white-color;
+  border-radius: 100px;
+  font-size: $p-font-size;
+  color: $dark-color;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-icon-link:hover {
+  background: $primary-color;
+  color: $white-color;
+}
+
+
+
+
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (max-width: 1500px) {
+  .speakers-text-info {
+   padding: 50px;
+ }
+}
+
+@media screen and (max-width: 991px) {
+ h1 {
+   font-size: 48px;
+ }
+
+ h2 {
+   font-size: 36px;
+ }
+
+ h3 {
+   font-size: 32px;
+ }
+
+ h4 {
+   font-size: 28px;
+ }
+
+ h5 {
+   font-size: 20px;
+ }
+
+ h6 {
+   font-size: 18px;
+ }
+
+ .section-padding,
+ .site-footer {
+   padding-top: 80px;
+   padding-bottom: 80px;
+ }
+
+ .custom-btn {
+   font-size: var(--copyright-text-font-size);
+   padding: 8px 16px;
+ }
+
+ .navbar-expand-lg .navbar-nav .nav-link {
+   padding-left: 0;
+ }
+
+ .navbar-nav .nav-link {
+   padding-top: 10px;
+   padding-bottom: 10px;
+ }
+
+ .hero {
+   height: calc(75vh - 78.39px);
+ }
+
+ .nav-tabs .nav-link {
+   width: 50%;
+ }
+
+ .copyright-text-wrap {
+   margin-top: 20px;
+ }
+}
+
+@media screen and (max-width: 480px) {
+ h1 {
+   font-size: 38px;
+ }
+
+ h2 {
+   font-size: 32px;
+ }
+
+ h3 {
+   font-size: 28px;
+ }
+
+ h4 {
+   font-size: 24px;
+ }
+
+ h5 {
+   font-size: 20px;
+ }
+
+ .navbar-brand {
+   font-size: 16px;
+ }
+
+ .custom-btn {
+   font-size: 13px;
+   padding: 6px 12px;
+ }
+
+ .nav-tabs .nav-link {
+   margin-right: 0;
+   margin-left: 0;
+   padding: 15px;
+ }
+
+ .hero-text {
+   width: 100%;
+ }
+
+ .site-footer .social-icon-link {
+   width: 35px;
+   height: 35px;
+   line-height: 35px;
+ }
+
+ .footer-menu-link {
+   margin-left: 10px;
+   margin-right: 10px;
+ }
+
+ .footer-menu,
+ .copyright-text-wrap {
+   justify-content: center;
+ }
+}
+

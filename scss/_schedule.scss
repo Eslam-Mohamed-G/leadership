@@ -1,0 +1,98 @@
+@use "variable" as *;
+
+@mixin circle($dimensions) {
+    border-radius: 50%;
+    width: $dimensions;
+    height: $dimensions;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-link span {
+    display: block;
+    text-align: left;
+}
+
+.nav-tabs .nav-link span {
+    display: block;
+}
+
+.nav-tabs .nav-link small {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    color: $p-color;
+}
+
+.nav-tabs .nav-link {
+    background: $white-color;
+    border-radius: 0;
+    border: 0;
+    border-left: 3px solid $section-bg-color;
+    padding: 20px 30px;
+    transition: all 0.3s;
+    width: 25%;
+}
+
+.nav-tabs .nav-link:first-child {
+    border-left-color: transparent;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-left-color: $primary-color;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+.nav-tabs .nav-link.active h3,
+.nav-tabs .nav-link:focus h3,
+.nav-tabs .nav-link:hover h3 {
+    color: $primary-color;
+}
+
+.schedule-image {
+    border-radius: 20px;
+}
+
+/*---------------------------------------
+  CALL TO ACTION              
+-----------------------------------------*/
+.call-to-action {
+    background-image: url('../images/terren-hurst-blgOFmPIlr0-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.call-to-action::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.call-to-action .row {
+    position: relative;
+    z-index: 2;
+}
+
+.call-to-action .custom-btn {
+    background: $white-color;
+    color: $dark-color;
+}
+
+.call-to-action .custom-btn:hover {
+    background: $primary-color;
+    color: $white-color;
+}

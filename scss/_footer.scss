@@ -1,0 +1,46 @@
+@use "variable" as *;
+
+@mixin circle($dimensions) {
+    border-radius: 50%;
+    width: $dimensions;
+    height: $dimensions;
+}
+
+
+.site-footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.arrow-icon {
+    @include circle(50px);
+    background: $section-bg-color;
+    color: $dark-color;
+    font-size: $h5-font-size;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+.arrow-icon:hover {
+    background: $primary-color;
+    color: $white-color;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    line-height: 1.2rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+
+    .brand-logo {
+        font-size: 38px;
+    }
+
+    .brand-text {
+        display: inline-block;
+        vertical-align: top;
+    }
+}

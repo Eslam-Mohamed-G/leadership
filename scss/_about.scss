@@ -1,0 +1,36 @@
+@use "variable.scss" as *;
+
+@mixin circle($dimensions) {
+    border-radius: 50%;
+    width: $dimensions;
+    height: $dimensions;
+}
+
+.avatar-image {
+    @include circle(50px);
+    border: 2px solid $white-color;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+$place: -10;
+@for $i from 1 through 4 {
+    .avatar-image-left-#{$i}{
+        margin-left: $place;
+    }
+    $place: $place - 0px;
+}
+.avatar-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.avatar-image:hover {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.d-inline{
+    margin-left: 30px;
+}
